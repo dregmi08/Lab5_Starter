@@ -14,5 +14,11 @@ function init() {
 
   button.addEventListener('click', () => {
     audio.play();
+    if(horn_select.value == "party-horn"){
+      const jsConfetti = new JSConfetti()
+      jsConfetti.addConfetti({
+        emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+     })
+    }
   });
 }
