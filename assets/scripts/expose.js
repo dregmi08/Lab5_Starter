@@ -24,21 +24,29 @@ function init() {
     }
   });
 
+ 
+
   const volume_button_select = document.getElementById('volume');
   const volume_img = document.querySelector('#volume-controls img');
   volume_button_select.addEventListener ('input', () => {
     if (volume_button_select.value == 0) {
       volume_img.src = 'assets/icons/volume-level-0.svg';
+      audio.volume = 0;
+      
     } 
     else if(volume_button_select.value < 33){
       volume_img.src = 'assets/icons/volume-level-1.svg';
+      audio.volume = (volume_button_select.value)/100;
     } 
     else if(volume_button_select.value < 67){
       volume_img.src = 'assets/icons/volume-level-2.svg';
+      audio.volume = (volume_button_select.value)/100;
     }
     else{
       volume_img.src = 'assets/icons/volume-level-3.svg';
+      audio.volume = (volume_button_select.value)/100;
     }
+
 
   });
 }
