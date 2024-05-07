@@ -135,4 +135,3 @@ import {
  test('tests if 98738 is a valid hex code', () => {
   expect(isHexColor('98738')).toBe(false);
  });
- 
