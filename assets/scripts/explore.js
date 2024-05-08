@@ -17,8 +17,8 @@ function populateVoiceList() {
 
   for (let i = 0; i < voices.length; i++) {
     const option = document.createElement("option");
-    //option.textContent = `${voices[i].name} (${voices[i].lang})`;
-    option.textContent = `${voices[i].name}`;
+    option.textContent = `${voices[i].name} (${voices[i].lang})`;
+    //option.textContent = `${voices[i].name}`;
 
     if (voices[i].default) {
       option.textContent += " — DEFAULT";
@@ -42,7 +42,8 @@ function Voice() {
 
   let curr = null;
   for (let i = 0; i < voices.length; i++) {
-      if (voices[i].name == selected) {
+    var required = `${voices[i].name} (${voices[i].lang})`;
+      if (required == selected) {
           curr = voices[i];
           break;
       }
